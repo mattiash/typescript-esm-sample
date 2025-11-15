@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node src/index.ts",
     "start:transform": "node --experimental-transform-types src/index.ts",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "test": "multi-tape src/**/*.test.ts"
   },
   "engines": {
     "node": ">=24.0.0"
@@ -21,6 +22,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^24.10.1",
+    "multi-tape": "^1.9.0",
+    "purple-tape": "^3.9.5",
     "typescript": "^5.7.2"
   }
 }
