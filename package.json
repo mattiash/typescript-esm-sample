@@ -1,0 +1,26 @@
+{
+  "name": "typescript-esm-project",
+  "version": "1.0.0",
+  "description": "A TypeScript ESM project that runs directly in Node.js 24+ without a build step",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "node src/index.ts",
+    "start:transform": "node --experimental-transform-types src/index.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "keywords": [
+    "typescript",
+    "esm",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.7.2"
+  }
+}
