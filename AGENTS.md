@@ -48,15 +48,15 @@ This is a TypeScript project configured to run directly in Node.js 24+ without a
 **CORRECT:**
 
 ```typescript
-import { something } from "./module.ts";
-import { type User } from "./types.ts";
+import { something } from './module.ts'
+import { type User } from './types.ts'
 ```
 
 **INCORRECT:**
 
 ```typescript
-import { something } from "./module"; // Missing extension
-import { something } from "./module.js"; // Wrong extension
+import { something } from './module' // Missing extension
+import { something } from './module.js' // Wrong extension
 ```
 
 **Why:** When using Node.js's direct TypeScript execution, imports must reference the actual file extensions on disk (`.ts`), not the compiled output (`.js`).
@@ -101,11 +101,11 @@ npm test
 Tests use `purple-tape` and are executed with `multi-tape`:
 
 ```typescript
-import { test } from "purple-tape";
+import { test } from 'purple-tape'
 
-test("description", async (t) => {
-  t.equal(actual, expected, "assertion message");
-});
+test('description', async (t) => {
+    t.equal(actual, expected, 'assertion message')
+})
 ```
 
 - Test files must end with `.test.ts`
@@ -117,7 +117,7 @@ test("description", async (t) => {
 **Pure ESM modules work perfectly** in this setup. Example:
 
 ```typescript
-import got from "got"; // Pure ESM module - works fine
+import got from 'got' // Pure ESM module - works fine
 ```
 
 When adding dependencies:
@@ -135,6 +135,27 @@ These are **separate operations**:
 
 Type errors don't prevent execution, but should be fixed for code quality.
 
+### 7. Code Formatting with Prettier
+
+This project uses Prettier for consistent code formatting with the following configuration:
+
+- **Single quotes** instead of double quotes
+- **No semicolons**
+- **ES5 trailing commas**
+- **Tab width of 4 spaces**
+
+**Always format your code** before committing:
+
+```bash
+# Format all files
+npm run format
+
+# Check formatting without modifying files
+npm run format:check
+```
+
+The Prettier configuration is defined in `.prettierrc` and should not be modified without team consensus.
+
 ## Common Tasks
 
 ### Adding a New Module
@@ -142,7 +163,8 @@ Type errors don't prevent execution, but should be fixed for code quality.
 1. Create the file with `.ts` extension in `src/` or `src/lib/`
 2. Use ESM syntax with `.ts` extensions in imports
 3. Export functions/types that other modules need
-4. Run `npm run type-check` to verify types
+4. Run `npm run format` to format the code
+5. Run `npm run type-check` to verify types
 
 ### Adding Tests
 
@@ -180,12 +202,14 @@ Type errors don't prevent execution, but should be fixed for code quality.
 ## Best Practices
 
 1. **Always include file extensions** in import statements
-2. **Run type-check** after making changes to catch type errors
-3. **Write tests** for new functionality using purple-tape
-4. **Use async/await** for asynchronous operations
-5. **Keep modules focused** - single responsibility principle
-6. **Export types** that other modules might need
-7. **Add descriptive messages** to all test assertions
+2. **Format code with Prettier** before committing (`npm run format`)
+3. **Run type-check** after making changes to catch type errors
+4. **Write tests** for new functionality using purple-tape
+5. **Use async/await** for asynchronous operations
+6. **Keep modules focused** - single responsibility principle
+7. **Export types** that other modules might need
+8. **Add descriptive messages** to all test assertions
+9. **Follow the Prettier style guide** - single quotes, no semicolons, 4-space tabs
 
 ## What NOT to Do
 

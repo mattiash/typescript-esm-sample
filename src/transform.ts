@@ -2,8 +2,8 @@
 // node --experimental-transform-types src/transform.ts
 
 enum MyEnum {
-  A,
-  B,
+    A,
+    B,
 }
 
-console.log(MyEnum.A);
+console.log(MyEnum.A)

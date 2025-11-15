@@ -1,33 +1,36 @@
 {
-  "name": "typescript-esm-project",
-  "version": "1.0.0",
-  "description": "A TypeScript ESM project that runs directly in Node.js 24+ without a build step",
-  "type": "module",
-  "main": "src/index.ts",
-  "scripts": {
-    "start": "node src/index.ts",
-    "start:transform": "node --experimental-transform-types src/index.ts",
-    "fetch": "node src/fetch-example.ts",
-    "type-check": "tsc --noEmit",
-    "test": "multi-tape src/**/*.test.ts"
-  },
-  "engines": {
-    "node": ">=24.0.0"
-  },
-  "keywords": [
-    "typescript",
-    "esm",
-    "nodejs"
-  ],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^24.10.1",
-    "multi-tape": "^1.9.0",
-    "purple-tape": "^3.9.5",
-    "typescript": "^5.7.2"
-  },
-  "dependencies": {
-    "got": "^14.6.4"
-  }
+    "name": "typescript-esm-project",
+    "version": "1.0.0",
+    "description": "A TypeScript ESM project that runs directly in Node.js 24+ without a build step",
+    "type": "module",
+    "main": "src/index.ts",
+    "scripts": {
+        "start": "node src/index.ts",
+        "start:transform": "node --experimental-transform-types src/index.ts",
+        "fetch": "node src/fetch-example.ts",
+        "type-check": "tsc --noEmit",
+        "test": "multi-tape src/**/*.test.ts",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "engines": {
+        "node": ">=24.0.0"
+    },
+    "keywords": [
+        "typescript",
+        "esm",
+        "nodejs"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^24.10.1",
+        "multi-tape": "^1.9.0",
+        "prettier": "^3.6.2",
+        "purple-tape": "^3.9.5",
+        "typescript": "^5.7.2"
+    },
+    "dependencies": {
+        "got": "^14.6.4"
+    }
 }
